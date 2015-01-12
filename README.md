@@ -1,2 +1,4 @@
-# angular-annyang
+Angular Annyang
+===============
+
 Annyang speech recognition in AngularJS

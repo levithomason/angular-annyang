@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Annyang Test</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/1.5.0/annyang.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <script src="bower_components/angularjs/angular.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/annyang-service.js"></script>
+    <script src="js/controller.js"></script>
+</head>
+
+<body ng-controller="MyController as ctrl">
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 class="page-header">Angular Annyang</h1>
+
+            <!-- No results -->
+            <ol ng-hide="ctrl.results.length > 0">
+                <li>Click allow ^</li>
+                <li>Wait for the red light on this Chrome tab</li>
+                <li>Say some short phrases</li>
+            </ol>
+
+            <!-- Has results -->
+            <div ng-show="ctrl.results.length > 0">
+                <button class="btn btn-default" ng-click="ctrl.clearResults()">Clear</button>
+
+                <hr/>
+
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="result in ctrl.results">
+                        <span class="badge">{{ result.date | date : 'EEE MMM, yyyy hh:mm:ss a' }}</span>
+                        {{ result.content }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
