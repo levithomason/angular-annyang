@@ -27,11 +27,18 @@
             <h1 class="page-header">Angular Annyang</h1>
 
             <!-- No results -->
-            <ol ng-hide="ctrl.results.length > 0">
-                <li>Click allow ^</li>
-                <li>Wait for the red light on this Chrome tab</li>
-                <li>Say some short phrases</li>
-            </ol>
+            <div ng-hide="ctrl.results.length > 0">
+                <ol>
+                    <li>Click allow ^</li>
+                    <li>Wait for the red light on this Chrome tab</li>
+                    <li>Say some short phrases</li>
+                </ol>
+
+                <p class="help-block">
+                    <i>Tip: more output in the console.</i>
+                </p>
+
+            </div>
 
             <!-- Has results -->
             <div ng-show="ctrl.results.length > 0">
